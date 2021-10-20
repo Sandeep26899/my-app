@@ -58,14 +58,14 @@ export default function TextForm(props) {
                 <h2 className={`mb-3 text-${props.mode==='light'?'dark':'light'}`}>{props.title}</h2>
                 <textarea className={`form-control text-${props.mode==='dark'?'light':'dark'} bg-${props.mode==='dark'?'dark':'light'}`} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
                 <span id="appendText"></span>
-                <button className="btn btn-primary mt-3 me-2" onClick={handleUpperCase}>UPPER CASE</button>
-                <button className="btn btn-primary mt-3 me-2" onClick={handleLowerCase}>lower case</button>
-                <button className="btn btn-primary mt-3 me-2" onClick={handleCaptalize}>Capitalized Case</button>
-                <button className="btn btn-primary mt-3 me-2" onClick={handleSentence}>Sentence case</button>
-                <button className="btn btn-primary mt-3 me-2" onClick={handleRemoveSpaces}>Remove Extra Spaces</button>
-                <button className="btn btn-primary mt-3 me-2" onClick={handleCopy}>Copy Text</button>
-                <button className="btn btn-primary mt-3 me-2" onClick={handleRemoveNumeric}>Remove Numeric Digits</button>
-                <button className="btn btn-danger mt-3 me-2" onClick={handleClear}>Clear Text</button>
+                <button disabled={text.length===0} className="btn btn-primary mt-3 me-2" onClick={handleUpperCase}>UPPER CASE</button>
+                <button disabled={text.length===0} className="btn btn-primary mt-3 me-2" onClick={handleLowerCase}>lower case</button>
+                <button disabled={text.length===0} className="btn btn-primary mt-3 me-2" onClick={handleCaptalize}>Capitalized Case</button>
+                <button disabled={text.length===0} className="btn btn-primary mt-3 me-2" onClick={handleSentence}>Sentence case</button>
+                <button disabled={text.length===0} className="btn btn-primary mt-3 me-2" onClick={handleRemoveSpaces}>Remove Extra Spaces</button>
+                <button disabled={text.length===0} className="btn btn-primary mt-3 me-2" onClick={handleCopy}>Copy Text</button>
+                <button disabled={text.length===0} className="btn btn-primary mt-3 me-2" onClick={handleRemoveNumeric}>Remove Numeric Digits</button>
+                <button disabled={text.length===0} className="btn btn-danger mt-3 me-2" onClick={handleClear}>Clear Text</button>
             </div>
             <div className="mb-3">
                 <h3 className={`text-${props.mode==='light'?'dark':'light'}`}>Your Text Summary</h3>
